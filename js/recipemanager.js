@@ -1,24 +1,29 @@
 
-function createTaskHtml(id, name, ingredients, description) 
+function createTaskHtml(id, name, ingredients, description, videoLink) 
 {
-  const html=`<div class="col" data-task-id="${id}">
-                <div class="card h-100">
-                        <div class="card-header bg-secondary">
-                          <h5 class="card-title text-white">${name}</h5>
-                        </div>
-                        <div class="card-body">
-                          <h6>Ingredients</h6>
-                          <p class="card-text text-secondary">${ingredients}</p>
-                          <h6>Description</h6>
-                          <p class="card-text text-secondary">${description}</p>
-                        </div>
-                      <div class="card-footer">
-                          <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
-                      </div>
-                  </div>
-              </div>`
-  return html;
-
+  videoLink==="" ? videoLink="https://www.youtube.com/embed/Pe9OmhrU4qg" : "";
+  
+    const html=`<div class="col" data-task-id="${id}">
+    <div class="card h-100">
+            <div class="card-header bg-secondary">
+              <h5 class="card-title text-white">${name}</h5>
+            </div>
+            <iframe src="${videoLink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="card-body">
+          
+              <h6>Ingredients</h6>
+              <p class="card-text text-secondary">${ingredients}</p>
+              <h6>Description</h6>
+              <p class="card-text text-secondary">${description}</p>
+            </div>
+          <div class="card-footer">
+              <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
+          </div>
+      </div>
+  </div>`
+return html;
+    
+  
 };
 
 class RecipeManager {
@@ -27,13 +32,14 @@ class RecipeManager {
     this.currentId = currentId;
   }
 
-  addTask(name, ingredients, discription) {
+  addTask(name, ingredients, discription, videoLink) {
 
     const task = {
       id: this.currentId++,
       name: name,
       ingredients: ingredients,
-      discription: discription, 
+      discription: discription,
+      videoLink: videoLink
     };
     this.tasks.push(task);
   }
@@ -60,6 +66,7 @@ class RecipeManager {
         task.name,
         task.ingredients,
         task.discription,
+        task.videoLink,
         
         
       );

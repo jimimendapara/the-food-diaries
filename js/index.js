@@ -11,6 +11,7 @@ const form = document.getElementById("collapseExample");
 const ingrID = document.getElementById("ingredients_form");
 const ingreErrMsg = document.getElementById("desc_valid");
 const addbtn = document.getElementById("submit_btn");
+const videolinkID = document.getElementById("videolink_form");
 let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
 validationFail = 0;
 
@@ -18,6 +19,7 @@ function clearFormField() {
     nameId.value = "";
     ingrID.value = "";
     descID.value = "";
+    videolinkID.value = "";
     errMsg.innerHTML ="";
     ingreErrMsg.innerHTML = "";
     
@@ -54,6 +56,7 @@ const validateDesc = () => {
             nameId.value,
             ingrID.value,
             descID.value,
+            videolinkID.value,
         );
         console.log("Name: " + nameId.value);
         console.log("Description: " + ingrID.value);
