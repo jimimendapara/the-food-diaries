@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <title>The Food Diaries</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand text-danger" href="#">
+                <img src="./image/13626529_161523937592100_9218995583664074577_n.png" alt="logoimage"
+                    class="d-inline-block align-text-top logo">
+                The Food Diaries
+            </a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add Recipe
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="text-warning">Add your Recipes here</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="row g-3 mt-3" id="collapseExample" tabindex="0"
+                                onsubmit="return false;">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="name_form" class="form-label">Recipe name <i
+                                                    class="bi bi-asterisk text-danger asterisk"></i></label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span id="name_valid"></span>
+                                            <input type="text" class="form-control" id="name_form">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="ingredients_form" class="form-label">Ingredients<i
+                                                    class="bi bi-asterisk text-danger asterisk"></i></label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <span id="desc_valid"></span>
+                                            <input type="textarea" class="form-control" id="ingredients_form">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label for="description_form" class="form-label">Recipe Discription</label>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <input type="textarea" class="form-control" id="description_form">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+
+                                        </div>
+                                        <div class="col-md-8">
+                                            <p class="text-black-50 fst-italic note mt-1">
+                                                Note: <i class="bi bi-asterisk text-danger asterisk"></i> Required field
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button"  id="reset" class="btn btn-warning text-white">Cancel</button>
+                            <button type="button" id="submit_btn" class="btn btn-warning text-white">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="card">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-header bg-secondary">
+                    <h5 class="card-title text-white">Card title</h5>
+                  </div>
+                <div class="card-body">
+                  
+                  <h6>Ingredients</h6>
+                  <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h6>Description</h6>
+                  <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                 </div>
+                 <div class="card-footer">
+                    <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
+                  </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header bg-secondary">
+                        <h5 class="card-title text-white">Card title</h5>
+                      </div>
+                    <div class="card-body">
+                      
+                      <h6>Ingredients</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h6>Description</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                     </div>
+                     <div class="card-footer">
+                        <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
+                      </div>
+                  </div>    
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header bg-secondary">
+                        <h5 class="card-title text-white">Card title</h5>
+                      </div>
+                    <div class="card-body">
+                      
+                      <h6>Ingredients</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h6>Description</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                     </div>
+                     <div class="card-footer">
+                        <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
+                      </div>
+                  </div>    
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-header bg-secondary">
+                        <h5 class="card-title text-white">Card title</h5>
+                      </div>
+                    <div class="card-body">
+                      
+                      <h6>Ingredients</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <h6>Description</h6>
+                      <p class="card-text text-secondary">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                     </div>
+                     <div class="card-footer">
+                        <a class="p-2" href="#deletebutton"><i class="bi bi-trash text-danger delete-button"></i></a>
+                      </div>
+                  </div>    
+            </div>
+          </div>
+    
+      </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+        <script src="./js/recipemanager.js"></script>
+        <script src="./js/index.js"></script>
+
+</body>
+
+</html>
