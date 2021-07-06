@@ -1,7 +1,7 @@
 
 function createTaskHtml(id, name, ingredients, description) 
 {
-  const html=`<div class="col data-task-id="${id}">
+  const html=`<div class="col" data-task-id="${id}">
                 <div class="card h-100">
                         <div class="card-header bg-secondary">
                           <h5 class="card-title text-white">${name}</h5>
